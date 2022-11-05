@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+  --clr-neon: #08fdd8;
+  --clr-bg: #0a192f;
+}
+
+
+body {
+
+    margin: 0;
+    font-family: 'Yellowtail', cursive;
+    font-size: 16px;
+    overflow-x: hidden;
+    background-color: #040a2d;
+}
+
+.container {
+
+    display: flex;
+    
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 100%
+}
+
+.left-side {
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-right: 0;
+}
+
+.right-side {
+    display: flex;    
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 5px;
+    
+}
+
+.brand img {
+    display: flex;
+    height: 50%;
+    justify-content: flex-end;
+    margin-right: 0;
+    margin-top: 30px;
+}
+
+
+
+.neon-button {
+	margin:15px;
+	font-size: 1.5rem;
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: none;
+	color: var(--clr-neon);
+	border: var(--clr-neon) 0.125em solid;
+	margin-left: 10px;
+	border-radius: 0.25em;
+	text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+	box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+	position: relative;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.neon-button::before {
+	pointer-events: none;
+	content: "";
+	position: absolute;
+	background: var(--clr-neon);
+	top: 120%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+	filter: blur(1em);
+	opacity: 0.7;
+}
+.neon-button::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	box-shadow: 0 0 2em 0.5em var(--clr-neon);
+	opacity: 0;
+	background-color: var(--clr-neon);
+	z-index: -1;
+	transition: opacity 100ms linear;
+}
+.neon-button:hover,.neon-button:focus {
+	color: var(--clr-bg);
+	text-shadow: none;
+}
+.neon-button:hover::before,.neon-button:focus::before {
+	opacity: 1;
+}
+.neon-button:hover::after,.neon-button:focus::after {
+	opacity: 1;
+}
+  .home {
+    margin-top: 60px;
+    display: flex;
+  }
+
+  .content-wrap {
+    font-size: 2rem;
+    color: #08fdd8;
+    margin-left: 50px;
+  }
+
+  .home-buttons {
+    display: flex;
+    
+  }
+
+  
+
+  .text-container {
+    width: 75%;
+    margin-left: 30px;
+    color: #08fdd8;
+    letter-spacing: .5ch;
+    margin:60px;
+  }
+  
+  .form-container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+    color: #08fdd8;
+    border-radius: 5px;
+  }
+  
+  .form-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-container a {
+    text-decoration: none;
+    color: lightblue;
+  }
+  
+  .btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background: lightblue;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+  }
+  
+  .btn:focus {
+    outline: 0;
+  }
+  
+  .btn:active {
+    transform: scale(0.98);
+  }
+  
+  .text {
+    margin-top: 30px;
+  }
+  
+  .form-control {
+    width: 330px;
+    color: #08fdd8;
+    position: relative;
+    margin: 20px 0 40px;
+    width: 300px;
+  }
+  
+  .form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .form-control input:focus,
+  .form-control input:valid {
+    outline: 0;
+    border-bottom-color: lightblue;
+  }
+  
+  .form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+  }
+  
+  .form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .form-control input:focus + label span,
+  .form-control input:valid + label span {
+    color: lightblue;
+    transform: translateY(-30px);
+  }
+  
+  /* ABOUT-EXPANDING CARDS */
+.card-container {
+	display: flex;
+	padding-top: 0px;
+	padding-bottom: 30px;
+	margin-top:30px;
+	width: 90vw;
+	height: 60vh;
+}
+.panel {
+  background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	height:80vh;
+	border-radius: 50px;
+	
+  color:#08fdd8;
+	cursor: pointer;
+	flex: 0.5;
+	margin: 10px;
+	position: relative;
+	transition: flex 0.7s ease-in;
+}
+.panel h3 {
+	font-size: 24px;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	margin: 0;
+	opacity: 0;
+}
+.panel.active {
+	flex: 5;
+}
+.panel.active h3 {
+	opacity: 1;
+	transition: opacity 0.4s ease-in 0.6s;
+}
